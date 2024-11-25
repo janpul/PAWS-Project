@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PAWS - @ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel=" stylesheet" type="text/css" href="~/Content/materialize.css" />
+    <link rel=" stylesheet" type="text/css" href="~/Content/style.css" />
+    <link rel=" stylesheet" type="text/css" href="~/Content/animate.css" />
+    <link rel=" stylesheet" type="text/css" href="~/Content/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body ng-app="PAWSProject" ng-controller="PAWSProjectController">
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="~/Content/img/logo.png" alt="Logo" />
+        </div>
+        <div class="menu">
+            <a href="#">Our Work</a>
+            <a href="#">Local Services</a>
+            <a href="#">How You Can Help</a>
+        </div>
+        <a href="#" class="donate-btn">DONATE</a>
+    </div>
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer style="background-color: #002b4e; color: white; padding: 40px 0; text-align: center;">
+        <div class="footer-content">
+            <img src="~/Content/img/logo.png" alt="ASPCA Logo" style="height: 100px; margin-bottom: 20px;">
+            <div class="footer-links">
+                <a href="#" style="color: white; margin: 0 15px; text-decoration: none;">About Us</a>
+                <a href="#" style="color: white; margin: 0 15px; text-decoration: none;">Contact</a>
+                <a href="#" style="color: white; margin: 0 15px; text-decoration: none;">Volunteer Now</a>
+                <a href="#" style="color: white; margin: 0 15px; text-decoration: none;">Donate</a>
+            </div>
+            <p style="margin: 20px 0;">
+                &copy; 2024 Pet Adoption Welfare System. All rights reserved.
+                <br /> The PAWS is a non-for-profit organization.
+                <a href="#" style="color: white; text-decoration: underline;">Privacy Policy</a>
+                <a href="#" style="color: white; text-decoration: underline;">Legal Info</a>
+            </p>
+            <div class="footer-social" style="margin: 20px 0;">
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-youtube"></i></a>
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-tiktok"></i></a>
+            </div>
+         </div>
+    </footer>
+
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/materialize.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/AngularScripts/Module.js"></script>
+    <script src="~/Scripts/AngularScripts/Controller.js"></script>
+    <script src="~/Scripts/AngularScripts/Service.js"></script>
+    </body>
+</html>
