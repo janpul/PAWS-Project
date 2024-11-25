@@ -169,12 +169,15 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Donate.css" />
+    <Content Include="Content\img\adopt\Bantay.jpg" />
     <Content Include="Content\img\adopt\lau.jpg" />
     <Content Include="Content\img\adopt\tatum.jpg" />
     <Content Include="Content\img\donatefooter.jpg" />
     <Content Include="Content\img\home_cat.jpeg" />
     <Content Include="Content\img\caro1.gif" />
     <Content Include="Content\img\caro2.jpg" />
+    <Content Include="Content\img\adopt\Iska.jpg" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\materialize.css" />
     <Content Include="Content\materialize.min.css" />
@@ -219,6 +222,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Donate.css" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -1007,6 +1011,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Home\Donate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
