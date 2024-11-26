@@ -352,7 +352,7 @@ body {
 }
 
     .amount.active {
-        background: #f47521;
+        background: #ffae42;
         color: white;
         border-color: #f47521;
     }
@@ -377,4 +377,88 @@ body {
     .donation-submit:hover {
         background: #ffae42;
     }
+
+.back-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: #f47521;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .back-button:hover {
+        background: #ffae42;
+    }
+
+.donation-navigation {
+    margin-top: 30px; /* Adds space between amounts and navigation buttons */
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between Back and Continue buttons */
+}
+
+/* Donation Form Updates */
+.donation-info {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.donation-form {
+    margin-top: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+    .form-group label {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: #f9f9f9;
+        transition: border-color 0.3s ease;
+    }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #f47521;
+            outline: none;
+        }
+
+.full-width {
+    flex: 100%;
+}
+
+.disclaimer {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
 

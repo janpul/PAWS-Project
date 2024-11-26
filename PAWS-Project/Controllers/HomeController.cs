@@ -33,5 +33,12 @@ namespace PAWS_Project.Controllers
 
             return View();
         }
+
+        public ActionResult DonateBilling()
+        {
+            ViewBag.Message = "Donate Page.";
+
+            return View();
+        }
     }
 }

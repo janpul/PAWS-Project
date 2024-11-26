@@ -14,11 +14,14 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
-<body ng-app="PAWSProject" ng-controller="PAWSProjectController">
+<body ng-app="PAWSProject" ng-controller="PAWSProjectContrsoller">
 
     <div class="navbar">
         <div class="logo">
-            <img src="~/Content/img/logo.png" alt="Logo" />
+            <a href="Index">
+                <!-- Link to homepage -->
+                <img src="~/Content/img/logo.png" alt="Logo" />
+            </a>
         </div>
         <div class="menu">
             <a href="#">Our Work</a>
@@ -27,6 +30,7 @@
         </div>
         <a href="Donate" class="donate-btn">DONATE</a>
     </div>
+
 
 
     <div>
@@ -55,7 +59,7 @@
                 <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
                 <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-tiktok"></i></a>
             </div>
-         </div>
+        </div>
     </footer>
 
     <script src="~/Scripts/jquery-3.7.0.min.js"></script>
@@ -64,5 +68,5 @@
     <script src="~/Scripts/AngularScripts/Module.js"></script>
     <script src="~/Scripts/AngularScripts/Controller.js"></script>
     <script src="~/Scripts/AngularScripts/Service.js"></script>
-    </body>
+</body>
 </html>
