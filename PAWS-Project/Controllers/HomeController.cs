@@ -40,5 +40,12 @@ namespace PAWS_Project.Controllers
 
             return View();
         }
+
+        public ActionResult Adopt()
+        {
+            ViewBag.Message = "Adopt Page.";
+
+            return View();
+        }
     }
 }
