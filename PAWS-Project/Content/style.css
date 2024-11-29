@@ -125,6 +125,18 @@ body {
         filter: brightness(70%);
     }
 
+.page-hero {
+    height: 300px;
+    position: center;
+    overflow: hidden;
+}
+
+    .page-hero img {
+        width: 100%;
+        height: auto;
+        filter: brightness(80%);
+    }
+
 .donate-background img {
     width: 100%;
     height: auto;
