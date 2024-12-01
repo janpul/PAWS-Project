@@ -47,5 +47,26 @@ namespace PAWS_Project.Controllers
 
             return View();
         }
+
+        public ActionResult Advocacy()
+        {
+            ViewBag.Message = "Advocacy Page.";
+
+            return View();
+        }
+
+        public ActionResult AdvocacyNews1()
+        {
+            ViewBag.Message = "Advocacy Page.";
+
+            return View();
+        }
+
+        public ActionResult LocalServices()
+        {
+            ViewBag.Message = "Local Services Page.";
+
+            return View();
+        }
     }
 }

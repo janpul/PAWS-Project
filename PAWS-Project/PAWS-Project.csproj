@@ -171,6 +171,9 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Donate.css" />
     <Content Include="Content\img\adopt\Bantay.jpg" />
+    <Content Include="Content\img\adopt\cat-and-vet.png" />
+    <Content Include="Content\img\adopt\donate-gcash.png" />
+    <Content Include="Content\img\adopt\donate-maya.png" />
     <Content Include="Content\img\adopt\lau.jpg" />
     <Content Include="Content\img\adopt\tatum.jpg" />
     <Content Include="Content\img\contact_cat.jpg" />
@@ -1016,6 +1019,9 @@
     <Content Include="Views\Home\Donate.cshtml" />
     <Content Include="Views\Home\DonateBilling.cshtml" />
     <Content Include="Views\Home\Adopt.cshtml" />
+    <Content Include="Views\Home\Advocacy.cshtml" />
+    <Content Include="Views\Home\AdvocacyNews1.cshtml" />
+    <Content Include="Views\Home\LocalServices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
