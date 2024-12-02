@@ -48,9 +48,9 @@ namespace PAWS_Project.Controllers
             return View();
         }
 
-        public ActionResult Advocacy()
+        public ActionResult Advocate()
         {
-            ViewBag.Message = "Advocacy Page.";
+            ViewBag.Message = "Advocate Page.";
 
             return View();
         }

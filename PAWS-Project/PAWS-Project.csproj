@@ -1019,7 +1019,7 @@
     <Content Include="Views\Home\Donate.cshtml" />
     <Content Include="Views\Home\DonateBilling.cshtml" />
     <Content Include="Views\Home\Adopt.cshtml" />
-    <Content Include="Views\Home\Advocacy.cshtml" />
+    <Content Include="Views\Home\Advocate.cshtml" />
     <Content Include="Views\Home\AdvocacyNews1.cshtml" />
     <Content Include="Views\Home\LocalServices.cshtml" />
   </ItemGroup>
