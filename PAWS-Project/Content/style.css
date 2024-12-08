@@ -63,7 +63,7 @@ body {
     }
 
         .menu a:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: #fff;
         }
 
 .donate-btn {
@@ -131,6 +131,8 @@ body {
 .section {
     position: relative;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .hero-background {
@@ -162,6 +164,7 @@ body {
     height: auto;
     filter: brightness(70%);
 }
+
 
 .content-wrapper {
     position: absolute;
@@ -789,6 +792,149 @@ body {
     .btn-link:hover {
         background-color: #d85a00;
     }
+
+.about-us-card {
+    max-width: 800px;
+    margin: 40px auto; /* Centers the card horizontally */
+    padding: 30px;
+    background-color: #fff; /* Card background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #eaeaea; /* Light border for structure */
+}
+
+.about-us-card-content {
+    text-align: center;
+}
+
+.about-us-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #f75f00; /* Accent color */
+    margin-bottom: 20px;
+}
+
+.about-us-card-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555; /* Text color for readability */
+    margin-bottom: 20px;
+    text-align: justify; /* Adjust for easier reading */
+}
+
+.about-us-card-content strong {
+    color: #f75f00; /* Highlighted keywords */
+}
+
+/*privacy-policy*/
+.privacy-policy {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+}
+
+    .privacy-policy h1 {
+        font-size: 2rem;
+        color: #f75f00;
+        margin-bottom: 20px;
+    }
+
+    .privacy-policy h2 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .privacy-policy p, .privacy-policy ul {
+        color: #555;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .privacy-policy ul {
+        padding-left: 20px;
+        list-style-type: disc;
+    }
+
+    .privacy-policy strong {
+        color: #000;
+    }
+
+    /*Pet Profile 1*/
+
+.pet-profile-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pet-image img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pet-details {
+    flex-grow: 1;
+}
+
+.pet-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.pet-breed,
+.pet-age,
+.pet-gender,
+.pet-size {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.pet-description {
+    font-size: 16px;
+    margin: 10px 0 20px;
+    color: #666;
+}
+
+.adopt-button {
+    background-color: #f47521;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .adopt-button:hover {
+        background-color: #ffae42;
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 
