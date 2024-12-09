@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>PAWS - @ViewBag.Title</title>
+    <title>PAWSEncode - @ViewBag.Title</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -34,19 +34,19 @@
             </div>
             <ul class="nav-links">
                 <li>
-                    <a href="#" class="active">
+                    <a href="~/Admin/Index">
                         <i class='bx bx-plus'></i>
                         <span class="links_name">Add Pet</span>
                     </a>
                 </li>
                 <li>
-                    <a href="search.php">
+                    <a href="~/Admin/Manage">
                         <i class='bx bx-list-ul'></i>
                         <span class="links_name">Manage Pets</span>
                     </a>
                 </li>
                 <li>
-                    <a href="users.php">
+                    <a href="~/Admin/User">
                         <i class='bx bx-user'></i>
                         <span class="links_name">User Management</span>
                     </a>
@@ -60,17 +60,35 @@
             </ul>
         </div>
         <section class="home-section">
+            <nav>
+                <div class="sidebar-button">
+                    <i class="bx bx-menu sidebarBtn" style="color:black;"></i>
+                    <span class="dashboard" style="color:black;">@ViewBag.Title</span>
+                </div>
+                <span class="dashboard text-right" style="color:black;">Welcome, Admin</span>
+            </nav>
             <br> <br>
             <div>
                 @RenderBody()
             </div>
         </section>
 
-            <script src="~/Scripts/jquery-3.7.0.min.js"></script>
-            <script src="~/Scripts/materialize.js"></script>
-            <script src="~/Scripts/angular.js"></script>
-            <script src="~/Scripts/AngularScripts/Module.js"></script>
-            <script src="~/Scripts/AngularScripts/Controller.js"></script>
-            <script src="~/Scripts/AngularScripts/Service.js"></script>
+        <script>
+            let sidebar = document.querySelector(".sidebar");
+            let sidebarBtn = document.querySelector(".sidebarBtn");
+            sidebarBtn.onclick = function () {
+                sidebar.classList.toggle("active");
+                if (sidebar.classList.contains("active")) {
+                    sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+                } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            };
+        </script>
+
+        <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+        <script src="~/Scripts/materialize.js"></script>
+        <script src="~/Scripts/angular.js"></script>
+        <script src="~/Scripts/AngularScripts/Module.js"></script>
+        <script src="~/Scripts/AngularScripts/Controller.js"></script>
+        <script src="~/Scripts/AngularScripts/Service.js"></script>
     </body>
 </html>

@@ -8,11 +8,25 @@ namespace PAWSProject.Controllers
 {
     public class AdminController : Controller
     {
-        // GET: Admin
         public ActionResult Index()
         {
-            ViewData["Layout"] = "~/Views/Shared/_AdminLayout.cshtml";
             return View();
         }
+
+        public ActionResult Error404()
+        {
+            return View();
+        }
+
+        public ActionResult Manage()
+        {
+            return View();
+        }
+
+        public ActionResult User()
+        {
+            return View();
+        }
+
     }
 }

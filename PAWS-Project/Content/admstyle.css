@@ -102,7 +102,6 @@
   width: calc(100% - 60px);
 }
 .home-section nav .sidebar-button{
-  display: flex;
   align-items: center;
   font-size: 24px;
   font-weight: 500;
