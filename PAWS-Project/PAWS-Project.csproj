@@ -1009,8 +1009,6 @@
     <Content Include="Scripts\test-bundles\angular-route.js" />
     <Content Include="Scripts\test-bundles\angular-sanitize.js" />
     <Content Include="Scripts\test-bundles\angular-touch.js" />
-    <Content Include="Views\Admin\admconfig.php" />
-    <Content Include="Views\Admin\changepass.php" />
     <Content Include="Views\Admin\create_user.php" />
     <Content Include="Views\Admin\delete_user.php" />
     <Content Include="Views\Admin\edit_user.php" />
@@ -1019,7 +1017,7 @@
     <Content Include="Views\Admin\logout.php" />
     <Content Include="Views\Admin\script.js" />
     <Content Include="Views\Admin\search.php" />
-    <Content Include="Views\Admin\style.css" />
+    <Content Include="Content\admstyle.css" />
     <Content Include="Views\Admin\unused_index.php" />
     <Content Include="Views\Admin\users.php" />
     <Content Include="Web.config" />
@@ -1049,6 +1047,7 @@
     <Content Include="Views\Home\AdvocacyNews2.cshtml" />
     <Content Include="Views\Admin\404.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

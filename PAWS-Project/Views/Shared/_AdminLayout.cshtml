@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PAWS - @ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel=" stylesheet" type="text/css" href="~/Content/materialize.css" />
+    <link rel=" stylesheet" type="text/css" href="~/Content/admstyle.css" />
+    <link rel=" stylesheet" type="text/css" href="~/Content/animate.css" />
+    <link rel=" stylesheet" type="text/css" href="~/Content/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body ng-app="PAWSProject" ng-controller="PAWSProjectController">
+
+    <head>
+        <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body>
+
+        <!---------------------- Sidebar ---------------------->
+
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class='bx bxs-user-circle'></i>
+                <span class="logo_name">PAWSEncoder</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#" class="active">
+                        <i class='bx bx-plus'></i>
+                        <span class="links_name">Add Pet</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="search.php">
+                        <i class='bx bx-list-ul'></i>
+                        <span class="links_name">Manage Pets</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="users.php">
+                        <i class='bx bx-user'></i>
+                        <span class="links_name">User Management</span>
+                    </a>
+                </li>
+                <li class="log_out">
+                    <a href="logout.php">
+                        <i class="bx bx-log-out"></i>
+                        <span class="links_name">Log out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <br> <br>
+            <div>
+                @RenderBody()
+            </div>
+        </section>
+
+            <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+            <script src="~/Scripts/materialize.js"></script>
+            <script src="~/Scripts/angular.js"></script>
+            <script src="~/Scripts/AngularScripts/Module.js"></script>
+            <script src="~/Scripts/AngularScripts/Controller.js"></script>
+            <script src="~/Scripts/AngularScripts/Service.js"></script>
+    </body>
+</html>

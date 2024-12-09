@@ -11,6 +11,7 @@ namespace PAWSProject.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            ViewData["Layout"] = "~/Views/Shared/_AdminLayout.cshtml";
             return View();
         }
     }
