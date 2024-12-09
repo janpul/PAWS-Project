@@ -1009,21 +1009,19 @@
     <Content Include="Scripts\test-bundles\angular-route.js" />
     <Content Include="Scripts\test-bundles\angular-sanitize.js" />
     <Content Include="Scripts\test-bundles\angular-touch.js" />
-    <None Include="Views\Home\Admin\404.cshtml" />
-    <Content Include="Views\Home\Admin\admconfig.php" />
-    <Content Include="Views\Home\Admin\changepass.php" />
-    <Content Include="Views\Home\Admin\create_user.php" />
-    <Content Include="Views\Home\Admin\delete_user.php" />
-    <Content Include="Views\Home\Admin\edit_user.php" />
-    <Content Include="Views\Home\Admin\get_user.php" />
-    <None Include="Views\Home\Admin\Index.cshtml" />
-    <Content Include="Views\Home\Admin\login.php" />
-    <Content Include="Views\Home\Admin\logout.php" />
-    <Content Include="Views\Home\Admin\script.js" />
-    <Content Include="Views\Home\Admin\search.php" />
-    <Content Include="Views\Home\Admin\style.css" />
-    <Content Include="Views\Home\Admin\unused_index.php" />
-    <Content Include="Views\Home\Admin\users.php" />
+    <Content Include="Views\Admin\admconfig.php" />
+    <Content Include="Views\Admin\changepass.php" />
+    <Content Include="Views\Admin\create_user.php" />
+    <Content Include="Views\Admin\delete_user.php" />
+    <Content Include="Views\Admin\edit_user.php" />
+    <Content Include="Views\Admin\get_user.php" />
+    <Content Include="Views\Admin\login.php" />
+    <Content Include="Views\Admin\logout.php" />
+    <Content Include="Views\Admin\script.js" />
+    <Content Include="Views\Admin\search.php" />
+    <Content Include="Views\Admin\style.css" />
+    <Content Include="Views\Admin\unused_index.php" />
+    <Content Include="Views\Admin\users.php" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1049,6 +1047,8 @@
     <Content Include="Views\Home\LegalInfo.cshtml" />
     <Content Include="Views\Home\Adopt.cshtml" />
     <Content Include="Views\Home\AdvocacyNews2.cshtml" />
+    <Content Include="Views\Admin\404.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
