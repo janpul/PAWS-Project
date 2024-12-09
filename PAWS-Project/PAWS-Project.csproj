@@ -1008,6 +1008,21 @@
     <Content Include="Scripts\test-bundles\angular-route.js" />
     <Content Include="Scripts\test-bundles\angular-sanitize.js" />
     <Content Include="Scripts\test-bundles\angular-touch.js" />
+    <Content Include="Views\Home\admin\404.php" />
+    <Content Include="Views\Home\admin\admconfig.php" />
+    <Content Include="Views\Home\admin\changepass.php" />
+    <Content Include="Views\Home\admin\create_user.php" />
+    <Content Include="Views\Home\admin\delete_user.php" />
+    <Content Include="Views\Home\admin\edit_user.php" />
+    <Content Include="Views\Home\admin\get_user.php" />
+    <Content Include="Views\Home\admin\index.php" />
+    <Content Include="Views\Home\admin\login.php" />
+    <Content Include="Views\Home\admin\logout.php" />
+    <Content Include="Views\Home\admin\script.js" />
+    <Content Include="Views\Home\admin\search.php" />
+    <Content Include="Views\Home\admin\style.css" />
+    <Content Include="Views\Home\admin\unused_index.php" />
+    <Content Include="Views\Home\admin\users.php" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
