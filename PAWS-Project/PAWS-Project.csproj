@@ -144,6 +144,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1008,21 +1009,21 @@
     <Content Include="Scripts\test-bundles\angular-route.js" />
     <Content Include="Scripts\test-bundles\angular-sanitize.js" />
     <Content Include="Scripts\test-bundles\angular-touch.js" />
-    <Content Include="Views\Home\admin\404.php" />
-    <Content Include="Views\Home\admin\admconfig.php" />
-    <Content Include="Views\Home\admin\changepass.php" />
-    <Content Include="Views\Home\admin\create_user.php" />
-    <Content Include="Views\Home\admin\delete_user.php" />
-    <Content Include="Views\Home\admin\edit_user.php" />
-    <Content Include="Views\Home\admin\get_user.php" />
-    <Content Include="Views\Home\admin\index.php" />
-    <Content Include="Views\Home\admin\login.php" />
-    <Content Include="Views\Home\admin\logout.php" />
-    <Content Include="Views\Home\admin\script.js" />
-    <Content Include="Views\Home\admin\search.php" />
-    <Content Include="Views\Home\admin\style.css" />
-    <Content Include="Views\Home\admin\unused_index.php" />
-    <Content Include="Views\Home\admin\users.php" />
+    <None Include="Views\Home\Admin\404.cshtml" />
+    <Content Include="Views\Home\Admin\admconfig.php" />
+    <Content Include="Views\Home\Admin\changepass.php" />
+    <Content Include="Views\Home\Admin\create_user.php" />
+    <Content Include="Views\Home\Admin\delete_user.php" />
+    <Content Include="Views\Home\Admin\edit_user.php" />
+    <Content Include="Views\Home\Admin\get_user.php" />
+    <None Include="Views\Home\Admin\Index.cshtml" />
+    <Content Include="Views\Home\Admin\login.php" />
+    <Content Include="Views\Home\Admin\logout.php" />
+    <Content Include="Views\Home\Admin\script.js" />
+    <Content Include="Views\Home\Admin\search.php" />
+    <Content Include="Views\Home\Admin\style.css" />
+    <Content Include="Views\Home\Admin\unused_index.php" />
+    <Content Include="Views\Home\Admin\users.php" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
