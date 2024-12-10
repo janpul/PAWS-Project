@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PAWSProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,8 @@ namespace PAWS_Project.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var pets = db.tblpet.ToList();
+            return View(pets);
         }
 
         public ActionResult About()
@@ -37,13 +39,6 @@ namespace PAWS_Project.Controllers
         public ActionResult DonateBilling()
         {
             ViewBag.Message = "Donate Page.";
-
-            return View();
-        }
-
-        public ActionResult Adopt()
-        {
-            ViewBag.Message = "Adopt Page.";
 
             return View();
         }
@@ -76,13 +71,6 @@ namespace PAWS_Project.Controllers
             return View();
         }
 
-        public ActionResult PetProfile1()
-        {
-            ViewBag.Message = "Bantay.";
-
-            return View();
-        }
-
         public ActionResult PrivacyPolicy()
         {
             ViewBag.Message = "Privacy Policy Page.";
@@ -95,6 +83,24 @@ namespace PAWS_Project.Controllers
             ViewBag.Message = "Legal Info Page.";
 
             return View();
+        }
+
+        private PawsContext db = new PawsContext();
+
+        public ActionResult Adopt()
+        {
+            var pets = db.tblpet.ToList();
+            return View(pets);
+        }
+
+        public ActionResult Pet(int id)
+        {
+            var pet = db.tblpet.Find(id);
+            if (pet == null)
+            {
+                return HttpNotFound();
+            }
+            return View(pet);
         }
     }
 }

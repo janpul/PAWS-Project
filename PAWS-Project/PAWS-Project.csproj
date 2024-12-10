@@ -64,14 +64,36 @@
     <Reference Include="MySql.Data.EntityFramework, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.EntityFramework.8.0.16\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.6.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -79,6 +101,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.3.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -149,6 +174,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PawsContext.cs" />
+    <Compile Include="Models\tblpetMap.cs" />
+    <Compile Include="Models\tblpetModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -171,18 +199,18 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Donate.css" />
-    <Content Include="Content\img\adopt\about us.jpg" />
-    <Content Include="Content\img\adopt\advocacy.jpg" />
-    <Content Include="Content\img\adopt\advocacy1.jpg" />
-    <Content Include="Content\img\adopt\advocacy2.jpg" />
+    <Content Include="Content\img\about us.jpg" />
+    <Content Include="Content\img\advocacy.jpg" />
+    <Content Include="Content\img\advocacy1.jpg" />
+    <Content Include="Content\img\advocacy2.jpg" />
     <Content Include="Content\img\adopt\Bantay.jpg" />
-    <Content Include="Content\img\adopt\cat-and-vet.png" />
-    <Content Include="Content\img\adopt\donate-gcash.png" />
-    <Content Include="Content\img\adopt\donate-maya.png" />
-    <Content Include="Content\img\adopt\donate-picture.jpg" />
-    <Content Include="Content\img\adopt\donate.jpg" />
+    <Content Include="Content\img\cat-and-vet.png" />
+    <Content Include="Content\img\donate-gcash.png" />
+    <Content Include="Content\img\donate-maya.png" />
+    <Content Include="Content\img\donate-picture.jpg" />
+    <Content Include="Content\img\donate.jpg" />
     <Content Include="Content\img\adopt\lau.jpg" />
-    <Content Include="Content\img\adopt\localservices.jpg" />
+    <Content Include="Content\img\localservices.jpg" />
     <Content Include="Content\img\adopt\tatum.jpg" />
     <Content Include="Content\img\contact_cat.jpg" />
     <Content Include="Content\img\donatefooter.jpg" />
@@ -1040,7 +1068,7 @@
     <Content Include="Views\Home\Advocate.cshtml" />
     <Content Include="Views\Home\AdvocacyNews1.cshtml" />
     <Content Include="Views\Home\LocalServices.cshtml" />
-    <Content Include="Views\Home\PetProfile1.cshtml" />
+    <Content Include="Views\Home\Pet.cshtml" />
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
     <Content Include="Views\Home\LegalInfo.cshtml" />
     <Content Include="Views\Home\Adopt.cshtml" />
@@ -1053,7 +1081,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\PawsContext\" />
+    <Folder Include="Views\tblpetMap\" />
+    <Folder Include="Views\tblpetModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

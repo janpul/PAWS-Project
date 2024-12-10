@@ -227,14 +227,18 @@ body {
     position: relative;
     overflow: hidden;
     display: block;
+    width: 200px; /* Example width */
+    height: 200px; /* Example height */
 }
 
     .pet-item img {
         width: 100%;
-        height: auto;
+        height: 100%; /* Ensure the image fills the container */
+        object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
         display: block;
         transition: transform 0.3s ease;
     }
+
 
     .pet-item:hover img {
         transform: scale(1.1); /* Slight zoom effect */
@@ -879,9 +883,9 @@ body {
 
 .pet-image img {
     width: 250px;
-    height: auto;
+    height: 250px; /* Set height to match width for a square shape */
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: cover; /* Ensures the image covers the container */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 

@@ -1,11 +1,11 @@
-﻿@{
+﻿@model IEnumerable<PAWSProject.Models.tblpetModel>
+@{
     ViewBag.Title = "Adopt";
 }
 
-
 <div class="section center-align">
     <div class="donate-background">
-        <img src="~/Content/img/adopt/donate-picture.jpg" alt="Descriptive Alt Text" class="responsive-img">
+        <img src="~/Content/img/donate-picture.jpg" alt="Descriptive Alt Text" class="responsive-img">
         <div class="content-wrapper">
             <h2 style="font-weight: 700">Take us Home!</h2>
             <p style="font-size: 18px;">Adopt a pet today and make a lifelong friend—your compassion saves lives!</p>
@@ -14,100 +14,20 @@
 </div>
 
 <div class="container">
-
     <div class="section">
         <h3 style="font-weight: 700; color: #f75f00" class="center-align"></h3>
     </div>
 
     <div class="pet-grid">
-        <a href="PetProfile1" class="pet-item">
-            <img src="~/Content/img/adopt/tatum.jpg" />
-            <div class="pet-overlay">
-                <span>Meet Bantay</span>
-            </div>
-        </a>
-
-        <a href="/pets/sampson" class="pet-item">
-            <img src="~/Content/img/adopt/tatum.jpg" />
-            <div class="pet-overlay">
-                <span>Meet Bathala</span>
-            </div>
-        </a>
-
-        <a href="/pets/sampson" class="pet-item">
-            <img src="~/Content/img/adopt/tatum.jpg" />
-            <div class="pet-overlay">
-                <span>Meet Bayani</span>
-            </div>
-        </a>
-
-        <a href="/pets/sampson" class="pet-item">
-            <img src="~/Content/img/adopt/tatum.jpg" />
-            <div class="pet-overlay">
-                <span>Meet Bituin</span>
-            </div>
-        </a>
-
-        <a href="/pets/sampson" class="pet-item">
-            <img src="~/Content/img/adopt/tatum.jpg" />
-            <div class="pet-overlay">
-                <span>Meet Dakila</span>
-            </div>
-        </a>
-
-        <a href="/pets/sampson" class="pet-item">
-            <img src="~/Content/img/adopt/tatum.jpg" />
-            <div class="pet-overlay">
-                <span>Meet Dalisay</span>
-            </div>
-        </a>
-
-        <a href="/pets/sampson" class="pet-item">
-            <img src="~/Content/img/adopt/tatum.jpg" />
-            <div class="pet-overlay">
-                <span>Meet Datu</span>
-            </div>
-        </a>
-
-        <a href="/pets/sampson" class="pet-item">
-            <img src="~/Content/img/adopt/tatum.jpg" />
-            <div class="pet-overlay">
-                <span>Meet Hiraya</span>
-            </div>
-        </a>
-
-        <a href="/pets/sampson" class="pet-item">
-            <img src="~/Content/img/adopt/tatum.jpg" />
-            <div class="pet-overlay">
-                <span>Meet Isla</span>
-            </div>
-        </a>
-
-        <a href="/pets/sampson" class="pet-item">
-            <img src="~/Content/img/adopt/tatum.jpg" />
-            <div class="pet-overlay">
-                <span>Meet Hiraya</span>
-            </div>
-        </a>
-
-        <a href="/pets/sampson" class="pet-item">
-            <img src="~/Content/img/adopt/tatum.jpg" />
-            <div class="pet-overlay">
-                <span>Meet Isla</span>
-            </div>
-        </a>
-
-        <a href="/pets/sampson" class="pet-item">
-            <img src="~/Content/img/adopt/tatum.jpg" />
-            <div class="pet-overlay">
-                <span>Meet Iska</span>
-            </div>
-        </a>
-        <!-- Repeat for more pets -->
-
-        <div class="section">
-            <h3 style="font-weight: 700; color: #f75f00" class="center-align"></h3>
-        </div>
-
+        @foreach (var pet in Model)
+        {
+            <a href="@Url.Action("Pet", "Home", new { id = pet.petID })" class="pet-item">
+                <img src="@pet.imagePath" alt="@pet.name" />
+                <div class="pet-overlay">
+                    <span>Meet @pet.name</span>
+                </div>
+            </a>
+        }
     </div>
 </div>
+<br /><br />
