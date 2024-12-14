@@ -1040,17 +1040,7 @@
     <Content Include="Scripts\test-bundles\angular-route.js" />
     <Content Include="Scripts\test-bundles\angular-sanitize.js" />
     <Content Include="Scripts\test-bundles\angular-touch.js" />
-    <Content Include="Views\Admin\create_user.php" />
-    <Content Include="Views\Admin\delete_user.php" />
-    <Content Include="Views\Admin\edit_user.php" />
-    <Content Include="Views\Admin\get_user.php" />
-    <Content Include="Views\Admin\login.php" />
-    <Content Include="Views\Admin\logout.php" />
-    <Content Include="Views\Admin\script.js" />
-    <Content Include="Views\Admin\search.php" />
     <Content Include="Content\admstyle.css" />
-    <Content Include="Views\Admin\unused_index.php" />
-    <Content Include="Views\Admin\users.php" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
