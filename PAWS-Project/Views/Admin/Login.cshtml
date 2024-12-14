@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "PAWSEncoder - Login";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/admstyle.css" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body class="d-flex align-items-center justify-content-center" style="height: 100vh;" ng-app="LoginApp" ng-controller="LoginController">
+    <style>
+        .logo-details {
+            text-align: center;
+            font-size: 3em;
+        }
+    </style>
+    <div class="container">
+        <div class="logo-details text-center">
+            <i class='bx bxs-user-circle'></i>
+            <span class="logo_name">PAWSEncoder</span>
+        </div>
+        <div class="row justify-content-center pt-3">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="alert alert-danger" role="alert" ng-show="errorMessage">
+                            {{ errorMessage }}
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" ng-model="username" placeholder="Enter your username" required>
+                        </div>
+                        <div class="form-group pt-2">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" ng-model="password" placeholder="Enter your password" required>
+                        </div>
+                        <button type="button" class="btn btn-primary mt-2" ng-click="login()">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module('LoginApp', []);
+        app.controller('LoginController', function ($scope, $http) {
+            $scope.errorMessage = '@ViewBag.ErrorMessage';
+
+            $scope.login = function () {
+                var data = {
+                    username: $scope.username,
+                    password: $scope.password
+                };
+
+                $http.post('/Admin/Login', data)
+                    .then(function (response) {
+                        if (response.data.success) {
+                            window.location.href = '/Admin/Index';
+                        } else {
+                            $scope.errorMessage = response.data.message;
+                        }
+                    }, function (error) {
+                        $scope.errorMessage = 'An error occurred during login.';
+                    });
+            };
+        });
+    </script>
+</body>
+</html>

@@ -174,8 +174,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PasswordHelper.cs" />
     <Compile Include="Models\PawsContext.cs" />
+    <Compile Include="Models\tbluserMap.cs" />
     <Compile Include="Models\tblpetMap.cs" />
+    <Compile Include="Models\tbluserModel.cs" />
     <Compile Include="Models\tblpetModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1078,9 +1081,11 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\Manage.cshtml" />
     <Content Include="Views\Admin\User.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\PasswordHelper\" />
     <Folder Include="Views\PawsContext\" />
     <Folder Include="Views\tblpetMap\" />
     <Folder Include="Views\tblpetModel\" />

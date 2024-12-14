@@ -22,6 +22,7 @@ namespace PAWSProject.Models
         }
 
         public virtual DbSet<tblpetModel> tblpet { get; set; }
+        public virtual DbSet<tbluserModel> tbluser { get; set; }
 
 
 
@@ -29,6 +30,7 @@ namespace PAWSProject.Models
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Configurations.Add(new tblpetMap());
+            modelBuilder.Configurations.Add(new tbluserMap());
         }
     }
 }

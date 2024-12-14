@@ -35,14 +35,17 @@
                     <span class="links_name">Manage Pets</span>
                 </a>
             </li>
-            <li>
-                <a href="~/Admin/User">
-                    <i class='bx bx-user'></i>
-                    <span class="links_name">User Management</span>
-                </a>
-            </li>
+            @if (Session["AccessLevel"] != null && Session["AccessLevel"].ToString() == "Admin")
+            {
+                <li>
+                    <a href="~/Admin/User">
+                        <i class='bx bx-user'></i>
+                        <span class="links_name">User Management</span>
+                    </a>
+                </li>
+            }
             <li class="log_out">
-                <a href="logout.php">
+                <a href="~/Admin/Logout">
                     <i class="bx bx-log-out"></i>
                     <span class="links_name">Log out</span>
                 </a>
@@ -55,7 +58,7 @@
                 <i class="bx bx-menu sidebarBtn" style="color:black;"></i>
                 <span class="dashboard" style="color:black;">@ViewBag.Title</span>
             </div>
-            <span class="dashboard text-right" style="color:black;">Welcome, Admin</span>
+            <span class="dashboard text-right" style="color:black;">Welcome, @Session["Username"]</span>
         </nav>
         <br> <br>
         <div>
