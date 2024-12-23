@@ -118,11 +118,20 @@ namespace PAWS_Project.Controllers
         [HttpPost]
         public JsonResult SubmitAdoptionForm(tbladoptformModel adoptionForm)
         {
+            if (Session["FormSubmitted"] != null)
+            {
+                return Json(new { success = false, message = "You can only an adoption form submit once." });
+            }
+
             if (ModelState.IsValid)
             {
                 adoptionForm.submitAt = DateTime.Now;
                 db.tbladoptform.Add(adoptionForm);
                 db.SaveChanges();
+
+                // Set session variable to indicate form submission
+                Session["FormSubmitted"] = true;
+
                 return Json(new { success = true });
             }
             return Json(new { success = false, message = "Invalid form data" });

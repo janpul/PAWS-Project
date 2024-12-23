@@ -155,9 +155,7 @@
                     confirmButtonText: 'OK'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        $timeout(function () {
-                            $window.location.href = '/Home/Adopt';
-                        }, 2000); // Redirect after 2 seconds
+                        window.closeModal(); // Close the modal
                     }
                 });
                 console.log('Adoption form submitted successfully');
@@ -183,6 +181,7 @@
             console.log('Error submitting adoption form');
         });
     };
+
 
     $scope.resetAdoptionForm = function () {
         $scope.adoptionForm = {};
