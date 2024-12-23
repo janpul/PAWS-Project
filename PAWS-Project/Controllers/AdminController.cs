@@ -106,6 +106,7 @@ namespace PAWSProject.Controllers
         [HttpPost]
         public JsonResult CreateUser(tbluserModel user)
         {
+            user.password = PasswordHelper.HashPassword(user.password); // Hash the password
             user.createdAt = DateTime.Now;
             user.updateAt = DateTime.Now;
             user.isActive = 1;
@@ -113,6 +114,7 @@ namespace PAWSProject.Controllers
             db.SaveChanges();
             return Json(user);
         }
+
 
         [HttpPut]
         public JsonResult UpdateUser(tbluserModel user)
@@ -183,12 +185,66 @@ namespace PAWSProject.Controllers
 
             pet.createdAt = dateNow;
             pet.updateAt = dateNow;
+            pet.encodedBy = Session["Username"].ToString();
+            pet.status = "For Adoption";
 
             using (var connect = new PawsContext())
             {
                 connect.tblpet.Add(pet);
                 connect.SaveChanges();
             }
+        }
+
+        public ActionResult GetPets()
+        {
+            var pets = db.tblpet.ToList();
+            return Json(pets, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult SearchPets(string query)
+        {
+            var pets = db.tblpet.Where(p => p.name.Contains(query)).ToList();
+            return Json(pets, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult DeletePet(int petID)
+        {
+            var pet = db.tblpet.Find(petID);
+            if (pet != null)
+            {
+                db.tblpet.Remove(pet);
+                db.SaveChanges();
+            }
+            return Json(new { success = true });
+        }
+
+        [HttpPost]
+        public ActionResult EditPet(tblpetModel pet, HttpPostedFileBase image)
+        {
+            var existingPet = db.tblpet.Find(pet.petID);
+            if (existingPet != null)
+            {
+                existingPet.name = pet.name;
+                existingPet.gender = pet.gender;
+                existingPet.age = pet.age;
+                existingPet.size = pet.size;
+                existingPet.details = pet.details;
+                existingPet.status = pet.status;
+                existingPet.updateAt = DateTime.Now;
+                existingPet.encodedBy = Session["Username"].ToString();
+
+                if (image != null && image.ContentLength > 0)
+                {
+                    var fileName = System.IO.Path.GetFileName(image.FileName);
+                    var path = System.IO.Path.Combine(Server.MapPath("~/Content/img/adopt/"), fileName);
+                    image.SaveAs(path);
+                    existingPet.imagePath = "/Content/img/adopt/" + fileName;
+                }
+
+                db.SaveChanges();
+            }
+            return Json(new { success = true });
         }
 
         public ActionResult Logout()

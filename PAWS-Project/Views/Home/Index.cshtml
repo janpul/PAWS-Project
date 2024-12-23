@@ -105,7 +105,7 @@
     </div>
 
     <div class="pet-grid">
-        @foreach (var pet in Model.Take(4))
+        @foreach (var pet in Model.Where(p => p.status != "Adopted" && p.status != "In Process").Take(4))
         {
             <a href="@Url.Action("Pet", "Home", new { id = pet.petID })" class="pet-item">
                 <img src="@pet.imagePath" />
@@ -121,7 +121,6 @@
             </div>
         </a>
     </div>
-
 
 </div>
 <br />
@@ -144,10 +143,8 @@
             indicators: true
         });
 
-
         setInterval(function () {
             instances.forEach(instance => instance.next());
         }, 7000);
     });
 </script>
-

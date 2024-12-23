@@ -19,7 +19,7 @@
     </div>
 
     <div class="pet-grid">
-        @foreach (var pet in Model)
+        @foreach (var pet in Model.Where(p => p.status != "Adopted" && p.status != "In Process"))
         {
             <a href="@Url.Action("Pet", "Home", new { id = pet.petID })" class="pet-item">
                 <img src="@pet.imagePath" alt="@pet.name" />
@@ -30,4 +30,5 @@
         }
     </div>
 </div>
-<br /><br />
+<br />
+<br />

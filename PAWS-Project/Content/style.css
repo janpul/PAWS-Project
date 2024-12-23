@@ -1,4 +1,97 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*media queries*/
+
+/* For tablets and small screens (min-width: 768px) */
+@media (min-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem; /* Adjust title size */
+    }
+
+    .hero-content p {
+        font-size: 1.5rem; /* Adjust paragraph size */
+    }
+
+    .menu {
+        gap: 20px; /* Space between menu items */
+    }
+
+    .donate-btn {
+        padding: 12px 20px;
+    }
+}
+
+/* For laptops and small desktops (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .hero-section {
+        padding: 0 100px; /* Add more spacing for larger screens */
+    }
+
+    .hero-content h1 {
+        font-size: 4rem; /* Increase title size */
+    }
+
+    .hero-content p {
+        font-size: 2rem; /* Increase paragraph size */
+    }
+
+    .menu {
+        gap: 30px;
+    }
+}
+
+/* For larger desktops (min-width: 1440px) */
+@media (min-width: 1440px) {
+    .hero-section {
+        padding: 0 150px;
+    }
+
+    .hero-content h1 {
+        font-size: 5rem;
+    }
+
+    .hero-content p {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Hide menu items */
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .hamburger-menu {
+        display: block; /* Add a hamburger icon */
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center-align cards */
+    }
+
+    .card {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .donation-form-container {
+        width: 90%; /* Full width for small screens */
+        padding: 15px;
+    }
+
+    .form-row {
+        flex-direction: column; /* Stack form fields */
+        gap: 10px; /* Add spacing between fields */
+    }
+}
 
 * {
     margin: 0;
@@ -733,15 +826,15 @@ body {
         text-align: justify; /* Keeps paragraphs justified */
     }
 
-.news-content a {
-    color: #f47521;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-    .news-content a:hover {
-        text-decoration: underline;
+    .news-content a {
+        color: #f47521;
+        text-decoration: none;
+        font-weight: bold;
     }
+
+        .news-content a:hover {
+            text-decoration: underline;
+        }
 
 /*local services*/
 .local-services-container {
@@ -867,7 +960,7 @@ body {
         color: #000;
     }
 
-    /*Pet Profile 1*/
+/*Pet Profile 1*/
 
 .pet-profile-container {
     display: flex;
@@ -930,21 +1023,99 @@ body {
         background-color: #ffae42;
     }
 
+/*forms for adoption*/
+.modal-alt {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 
+.modal-content-alt {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
 
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
 
+.modal-subtitle {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+}
 
+.form-group {
+    margin-bottom: 20px;
+}
 
+    .form-group label {
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: block;
+        color: #444;
+    }
 
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 0.2s ease-in-out;
+    }
 
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+        }
 
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
 
+.btn-primary {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
+    .btn-primary:hover {
+        background: #0056b3;
+    }
 
+.btn-secondary {
+    background: #ccc;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-
-
-
-
-
-
+    .btn-secondary:hover {
+        background: #aaa;
+    }

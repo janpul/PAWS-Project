@@ -1,8 +1,111 @@
-﻿
-@{
+﻿@{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     ViewBag.Title = "Manage Pets";
 }
 
-<h2>Manage</h2>
-
+<div class="container pt-5" ng-app="PAWSProject">
+    <div class="card rounded-card">
+        <div class="card-body">
+            <form ng-show="!isEdit">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search" ng-model="searchQuery" ng-change="searchPets()">
+                    <select class="form-control ml-2" ng-model="statusFilter" ng-change="searchPets()">
+                        <option value="">All Statuses</option>
+                        <option value="For Adoption">For Adoption</option>
+                        <option value="In Process">In Process</option>
+                        <option value="Adopted">Adopted</option>
+                    </select>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+            <table class="table table-striped" ng-show="!isEdit">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Size</th>
+                        <th scope="col">Encoded By</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="pet in pets | filter: { status: statusFilter } | filter: searchQuery">
+                        <td>{{ pet.name }}</td>
+                        <td>{{ pet.gender }}</td>
+                        <td>{{ pet.age }}</td>
+                        <td>{{ pet.size }}</td>
+                        <td>{{ pet.encodedBy }}</td>
+                        <td>{{ pet.status }}</td>
+                        <td>
+                            <a href="#" ng-click="editPet(pet)" title="Edit"><i class="bx bx-pencil font-size-18"></i></a>
+                            <a href="#" ng-click="deletePet(pet.petID)" title="Delete" class="px-2 text-danger"><i class="bx bx-trash font-size-18"></i></a>
+                            <a href="/Home/Pet/{{ pet.petID }}" title="View"><i class="bx bx-show font-size-18"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div ng-show="isEdit">
+                <div class="row align-items-center">
+                    <h2 class="card-title" id="formTitle">{{ isEdit ? 'Editing Pet - ' + originalPetName : 'Create New Pet' }}</h2>
+                </div>
+                <form ng-submit="savePet()" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="petName">Name</label>
+                        <input type="text" class="form-control" id="petName" ng-model="pet.name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="petGender">Gender</label>
+                        <select class="form-control" id="petGender" ng-model="pet.gender" required>
+                            <option value="" disabled>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="petAge">Age</label>
+                        <select class="form-control" id="petAge" ng-model="pet.age" required>
+                            <option value="" disabled>Select Age</option>
+                            <option value="Pediatric">Pediatric</option>
+                            <option value="Young Adult">Young Adult</option>
+                            <option value="Mature Adult">Mature Adult</option>
+                            <option value="Senior">Senior</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="petSize">Size</label>
+                        <select class="form-control" id="petSize" ng-model="pet.size" required>
+                            <option value="" disabled>Select Size</option>
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="petDetails">Pet Description</label>
+                        <textarea class="form-control" id="petDetails" ng-model="pet.details" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="petImage">Upload Pet Image</label>
+                        <input type="file" class="form-control" id="petImage" file-model="pet.image" reset-file-input="resetFileInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="petStatus">Status</label>
+                        <select class="form-control" id="petStatus" ng-model="pet.status" required>
+                            <option value="For Adoption">For Adoption</option>
+                            <option value="In Process">In Process</option>
+                            <option value="Adopted">Adopted</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" ng-click="cancelEdit()">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+</div>

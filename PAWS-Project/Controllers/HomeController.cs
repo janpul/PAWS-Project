@@ -9,6 +9,8 @@ namespace PAWS_Project.Controllers
 {
     public class HomeController : Controller
     {
+        private PawsContext db = new PawsContext();
+
         public ActionResult Index()
         {
             var pets = db.tblpet.ToList();
@@ -85,22 +87,45 @@ namespace PAWS_Project.Controllers
             return View();
         }
 
-        private PawsContext db = new PawsContext();
-
         public ActionResult Adopt()
         {
             var pets = db.tblpet.ToList();
             return View(pets);
         }
 
-        public ActionResult Pet(int id)
+        public ActionResult Pet(int? id)
         {
+            if (id == null)
+            {
+                return RedirectToAction("PageNotFound", "Home");
+            }
+
             var pet = db.tblpet.Find(id);
             if (pet == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("PageNotFound", "Home");
             }
+
             return View(pet);
+        }
+
+        public ActionResult PageNotFound()
+        {
+            Response.StatusCode = 404;
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult SubmitAdoptionForm(tbladoptformModel adoptionForm)
+        {
+            if (ModelState.IsValid)
+            {
+                adoptionForm.submitAt = DateTime.Now;
+                db.tbladoptform.Add(adoptionForm);
+                db.SaveChanges();
+                return Json(new { success = true });
+            }
+            return Json(new { success = false, message = "Invalid form data" });
         }
     }
 }

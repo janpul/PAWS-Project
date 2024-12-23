@@ -14,20 +14,80 @@
 </div>
 
 <br />
-<div class="pet-profile-container">
-    <div class="pet-image">
-        <img src="@Model.imagePath" alt="Cute Dog" />
-    </div>
-    <div class="pet-details">
-        <h2 class="pet-name">@Model.name</h2>
-        <p class="pet-age"><strong>Age:</strong> @Model.age</p>
-        <p class="pet-gender"><strong>Gender:</strong> @Model.gender</p>
-        <p class="pet-size"><strong>Size:</strong> @Model.size</p>
-        <p class="pet-description">
-            @Model.details
-        </p>
-        <a href="@Url.Action("Adopt", "Home")" class="adopt-button">Back</a>
-        <a href="" class="adopt-button">Adopt @Model.name</a>
-    </div>
+<div class="pet-profile-container" ng-app="PAWSProject" ng-controller="PAWSProjectController">
+    @if (Model.status == "In Process" || Model.status == "Adopted")
+    {
+        <div class="pet-details center-align">
+            <h2 class="pet-name">This pet is currently unavailable for adoption.</h2>
+            <br />
+            <a href="@Url.Action("Adopt", "Home")" class="adopt-button">Back to Adopt Page</a>
+            <br />
+            <br />
+        </div>
+    }
+    else
+    {
+        <div class="pet-image">
+            <img src="@Model.imagePath" alt="A photo of @Model.name" />
+        </div>
+        <div class="pet-details">
+            <h2 class="pet-name">@Model.name</h2>
+            <p class="pet-age"><strong>Age:</strong> @Model.age</p>
+            <p class="pet-gender"><strong>Gender:</strong> @Model.gender</p>
+            <p class="pet-size"><strong>Size:</strong> @Model.size</p>
+            <h2 class="pet-name">Get to know @Model.name!</h2>
+            <p class="pet-description">
+                @Model.details
+            </p>
+            <br />
+            <a class="adopt-button" onclick="openModal()">Adopt @Model.name</a>
+            <a href="@Url.Action("Adopt", "Home")" class="adopt-button">Back</a>
+        </div>
+    }
 </div>
 <br />
+
+<!-- Modal for Adoption Form -->
+<div id="adoptionModal" class="modal-alt">
+    <div class="modal-content-alt">
+        <h3 class="modal-title">Adopt @Model.name</h3>
+        <p class="modal-subtitle">Fill out the form below to start the adoption process!</p>
+        <form name="adoptionFormElement" ng-submit="submitAdoptionForm()">
+            <input type="hidden" ng-model="adoptionForm.petID" ng-init="adoptionForm.petID=@Model.petID" />
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" ng-model="adoptionForm.fname" required />
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" ng-model="adoptionForm.lname" required />
+            </div>
+            <div class="form-group">
+                <label for="phone-number">Phone Number</label>
+                <input type="tel" id="phone-number" name="phone-number" placeholder="Enter your phone number" ng-model="adoptionForm.phonenum" required />
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" ng-model="adoptionForm.email" required />
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" placeholder="Enter your full address" ng-model="adoptionForm.address" required></textarea>
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn-secondary" onclick="closeModal()">Back</button>
+                <button type="submit" class="btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById("adoptionModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("adoptionModal").style.display = "none";
+    }
+</script>

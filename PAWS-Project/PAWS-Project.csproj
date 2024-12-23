@@ -176,6 +176,8 @@
     </Compile>
     <Compile Include="Models\PasswordHelper.cs" />
     <Compile Include="Models\PawsContext.cs" />
+    <Compile Include="Models\tbladoptformMap.cs" />
+    <Compile Include="Models\tbladoptformModel.cs" />
     <Compile Include="Models\tbluserMap.cs" />
     <Compile Include="Models\tblpetMap.cs" />
     <Compile Include="Models\tbluserModel.cs" />
@@ -1057,7 +1059,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Home\Donate.cshtml" />
-    <Content Include="Views\Home\DonateBilling.cshtml" />
     <Content Include="Views\Home\Advocate.cshtml" />
     <Content Include="Views\Home\AdvocacyNews1.cshtml" />
     <Content Include="Views\Home\LocalServices.cshtml" />
@@ -1072,13 +1073,10 @@
     <Content Include="Views\Admin\Manage.cshtml" />
     <Content Include="Views\Admin\User.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Home\PageNotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\PasswordHelper\" />
-    <Folder Include="Views\PawsContext\" />
-    <Folder Include="Views\tblpetMap\" />
-    <Folder Include="Views\tblpetModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

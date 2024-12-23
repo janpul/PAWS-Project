@@ -13,6 +13,8 @@ namespace PAWSProject.Models
         public string age { get; set; }
         public string size { get; set; }
         public string details { get; set; }
+        public string encodedBy { get; set; }
+        public string status { get; set; }
         public string imagePath { get; set; }
         public DateTime createdAt { get; set; }
         public DateTime updateAt { get; set; }

@@ -6,6 +6,29 @@
             headers: { 'Content-Type': undefined }
         });
     };
+
+    this.getPets = function () {
+        return $http.get('/Admin/GetPets');
+    };
+
+    this.searchPets = function (query) {
+        return $http.get('/Admin/SearchPets', { params: { query: query } });
+    };
+
+    this.deletePet = function (petID) {
+        return $http.post('/Admin/DeletePet', { petID: petID });
+    };
+
+    this.editPet = function (formData) {
+        return $http.post('/Admin/EditPet', formData, {
+            transformRequest: angular.identity,
+            headers: { 'Content-Type': undefined }
+        });
+    };
+
+    this.submitAdoptionForm = function (adoptionData) {
+        return $http.post('/Home/SubmitAdoptionForm', adoptionData);
+    };
 });
 
 app.service("UserService", function ($http) {
