@@ -25,6 +25,12 @@
         <ul class="nav-links">
             <li>
                 <a href="~/Admin/Index">
+                    <i class='bx bx-home'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="~/Admin/Add">
                     <i class='bx bx-plus'></i>
                     <span class="links_name">Add Pet</span>
                 </a>
@@ -33,6 +39,12 @@
                 <a href="~/Admin/Manage">
                     <i class='bx bx-list-ul'></i>
                     <span class="links_name">Manage Pets</span>
+                </a>
+            </li>
+            <li>
+                <a href="~/Admin/Form">
+                    <i class='bx bx-notepad'></i>
+                    <span class="links_name">Interest Forms</span>
                 </a>
             </li>
             @if (Session["AccessLevel"] != null && Session["AccessLevel"].ToString() == "Admin")
@@ -85,5 +97,7 @@
     <script src="~/Scripts/AngularScripts/Module.js"></script>
     <script src="~/Scripts/AngularScripts/Controller.js"></script>
     <script src="~/Scripts/AngularScripts/Service.js"></script>
+    <script src="~/Scripts/chart.js"></script>
+    <script src="~/Scripts/angular-chart.js"></script>
 </body>
 </html>

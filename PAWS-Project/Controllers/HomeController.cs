@@ -120,7 +120,7 @@ namespace PAWS_Project.Controllers
         {
             if (Session["FormSubmitted"] != null)
             {
-                return Json(new { success = false, message = "You can only an adoption form submit once." });
+                return Json(new { success = false, message = "You can only submit an adoption form once." });
             }
 
             if (ModelState.IsValid)

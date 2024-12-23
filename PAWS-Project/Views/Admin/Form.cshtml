@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Manage Interest Forms";
+}
+
+<div class="container pt-5" ng-app="PAWSProject" ng-controller="PAWSProjectController">
+    <div ng-repeat="form in adoptionForms" class="card mb-3 shadow-sm">
+        <div class="row">
+            <div class="col-md-8">
+                <p><strong>Adopting for:</strong> {{ form.name }}</p>
+                <p><strong>Name:</strong> {{ form.fname }} {{ form.lname }}</p>
+                <p><strong>Email Address:</strong> {{ form.email }}</p>
+                <p><strong>Phone Number:</strong> {{ form.phonenum }}</p>
+                <p><strong>Address:</strong> {{ form.address }}</p>
+                <a href="tel:{{ form.phonenum }}" class="btn btn-primary mt-2">
+                    <i class="bx bx-phone"></i> Call
+                </a>
+                <a href="mailto:{{ form.email }}" class="btn btn-secondary mt-2">
+                    <i class="bx bx-envelope"></i> Email
+                </a>
+            </div>
+            <div class="col-md-4 text-md-right">
+                <p><strong>Submitted at:</strong> {{ form.submitAt | date:'MMMM d, yyyy (h:mm a)' }}</p>
+                <a href="#" ng-click="updatePetStatus(form.petID, 'In Process')" title="In Process" class="btn btn-warning mt-2">
+                    <i class="bx bx-time"></i> Put In Process
+                </a>
+                <a href="#" ng-click="deleteAdoptionForm(form.formID)" title="Delete" class="btn btn-danger mt-2">
+                    <i class="bx bx-trash"></i> Delete
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

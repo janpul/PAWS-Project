@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Add Pet";
+}
+
+<div class="container pt-5" ng-app="PAWSProject" ng-controller="PAWSProjectController">
+    <div class="card rounded-card mt-4">
+        <div class="card-body">
+            <form name="petForm" ng-submit="addPet()" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="name"
+                           name="name"
+                           placeholder="Enter pet name"
+                           ng-model="pet.name"
+                           required />
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" id="gender" name="gender" ng-model="pet.gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <select class="form-control" id="age" name="age" ng-model="pet.age" required>
+                        <option value="" disabled selected>Select Age</option>
+                        <option value="Pediatric">Pediatric</option>
+                        <option value="Young Adult">Young Adult</option>
+                        <option value="Mature Adult">Mature Adult</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="size">Size</label>
+                    <select class="form-control" id="size" name="size" ng-model="pet.size" required>
+                        <option value="" disabled selected>Select Size</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="details">Pet Description</label>
+                    <textarea class="form-control"
+                              id="details"
+                              name="details"
+                              placeholder="Enter pet description"
+                              rows="4"
+                              ng-model="pet.details"
+                              required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Upload Pet Image</label>
+                    <input type="file"
+                           class="form-control"
+                           id="image"
+                           name="image"
+                           file-model="pet.image"
+                           required />
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" ng-disabled="petForm.$invalid">
+                    Add Pet
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<br />
+<br />

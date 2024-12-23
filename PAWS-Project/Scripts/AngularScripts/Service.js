@@ -29,6 +29,18 @@
     this.submitAdoptionForm = function (adoptionData) {
         return $http.post('/Home/SubmitAdoptionForm', adoptionData);
     };
+
+    this.getAdoptionForms = function () {
+        return $http.get("/Admin/GetAdoptionForms");
+    };
+
+    this.deleteAdoptionForm = function (formID) {
+        return $http.post("/Admin/DeleteAdoptionForm", { formID: formID });
+    };
+
+    this.updatePetStatus = function (petID, status) {
+        return $http.post("/Admin/UpdatePetStatus", { petID: petID, status: status });
+    };
 });
 
 app.service("UserService", function ($http) {

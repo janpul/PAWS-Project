@@ -190,6 +190,68 @@
             $scope.adoptionFormElement.$setUntouched();
         }
     };
+
+    $scope.adoptionForms = [];
+
+    $scope.getAdoptionForms = function () {
+        PAWSProjectService.getAdoptionForms().then(function (response) {
+            $scope.adoptionForms = response.data.map(function (form) {
+                form.submitAt = new Date(parseInt(form.submitAt.replace(/\/Date\((\d+)\)\//, '$1')));
+                return form;
+            });
+        });
+    };
+
+    $scope.deleteAdoptionForm = function (formID) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                PAWSProjectService.deleteAdoptionForm(formID).then(function (response) {
+                    $scope.getAdoptionForms();
+                    Swal.fire(
+                        'Deleted!',
+                        'Form has been deleted.',
+                        'success'
+                    );
+                });
+            }
+        });
+    };
+
+    $scope.updatePetStatus = function (petID, status) {
+        if (petID == null) {
+            Swal.fire(
+                'Error!',
+                'Pet ID is required.',
+                'error'
+            );
+            return;
+        }
+
+        PAWSProjectService.updatePetStatus(petID, status).then(function (response) {
+            if (response.data.success) {
+                Swal.fire(
+                    'Updated!',
+                    'Pet status has been updated to ' + status + '.',
+                    'success'
+                );
+                $scope.getAdoptionForms();
+            } else {
+                Swal.fire(
+                    'Error!',
+                    'Failed to update pet status: ' + response.data.message,
+                    'error'
+                );
+            }
+        });
+    };
+
+    $scope.getAdoptionForms();
 });
 
 app.directive('fileModel', ['$parse', function ($parse) {

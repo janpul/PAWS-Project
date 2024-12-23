@@ -30,7 +30,28 @@ namespace PAWSProject.Controllers
             }
             return View();
         }
+
+        public ActionResult Add()
+        {
+            if (Session["IsAuthenticated"] == null || !(bool)Session["IsAuthenticated"])
+            {
+                Session["ErrorMessage"] = "You must be logged in to access this webpage.";
+                return RedirectToAction("Login");
+            }
+            return View();
+        }
+
         public ActionResult Manage()
+        {
+            if (Session["IsAuthenticated"] == null || !(bool)Session["IsAuthenticated"])
+            {
+                Session["ErrorMessage"] = "You must be logged in to access this webpage.";
+                return RedirectToAction("Login");
+            }
+            return View();
+        }
+
+        public ActionResult Form()
         {
             if (Session["IsAuthenticated"] == null || !(bool)Session["IsAuthenticated"])
             {
@@ -245,6 +266,56 @@ namespace PAWSProject.Controllers
                 db.SaveChanges();
             }
             return Json(new { success = true });
+        }
+
+        public ActionResult GetAdoptionForms()
+        {
+            var forms = db.tbladoptform
+                .Join(db.tblpet, form => form.petID, pet => pet.petID, (form, pet) => new
+                {
+                    form.formID,
+                    form.fname,
+                    form.lname,
+                    form.phonenum,
+                    form.email,
+                    form.address,
+                    form.submitAt,
+                    pet.name,
+                    form.petID
+                }).ToList();
+
+            return Json(forms, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteAdoptionForm(int formID)
+        {
+            var form = db.tbladoptform.Find(formID);
+            if (form != null)
+            {
+                db.tbladoptform.Remove(form);
+                db.SaveChanges();
+                return Json(new { success = true });
+            }
+            return Json(new { success = false, message = "Form not found" });
+        }
+
+        [HttpPost]
+        public ActionResult UpdatePetStatus(int? petID, string status)
+        {
+            if (petID == null)
+            {
+                return Json(new { success = false, message = "Pet ID is required." });
+            }
+
+            var pet = db.tblpet.Find(petID);
+            if (pet != null)
+            {
+                pet.status = status;
+                db.SaveChanges();
+                return Json(new { success = true });
+            }
+            return Json(new { success = false, message = "Pet not found" });
         }
 
         public ActionResult Logout()
