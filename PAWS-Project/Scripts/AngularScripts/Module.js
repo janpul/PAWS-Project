@@ -1,1 +1,1 @@
-﻿var app = angular.module("PAWSProject", ['chart.js']);
+﻿var app = angular.module("PAWSProject", ['Chart.js']);
